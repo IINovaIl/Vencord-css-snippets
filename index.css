@@ -1,0 +1,10 @@
+/* ============================================================
+   Vencord CSS Snippets — Master Index
+   Import this single file to get all snippets at once, or
+   import individual snippets directly for a la carte usage.
+
+   Full bundle:
+   @import url(https://YOUR_USERNAME.github.io/vencord-css-snippets/index.css);
+   ============================================================ */
+
+@import url(./snippets/NitroCardBanner/NitroCardBanner.css);
