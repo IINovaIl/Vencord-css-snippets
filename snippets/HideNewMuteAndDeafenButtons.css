@@ -1,9 +1,9 @@
-/* Hide the buttons next to mute and deafen */
-div[class*=-micButtonParent] {
-  button[role="switch"] {
-    border-radius: var(--radius-sm) !important;
-    ~ button {
-      display: none;
-    }
-  }
+/* Hide voice settings menus in user panel */
+div[class^="audioButtonParent__"] button[role="switch"] {
+  border-radius: var(--radius-sm);
+  & ~ button { display: none; }
+}
+/* Also reduce the gap between the buttons */
+div.container__37e49 > div.buttons__37e49 {
+  gap: 1px;
 }
