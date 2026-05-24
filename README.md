@@ -9,8 +9,6 @@ css editor clean.
 ---
 ## Snippets
 
-| Snippet | Description | Import |
-|---|---|---|
 | **PopOutActivityBackground** | give activity in the userpopout a background based on the activity icon | `@import url(https://iinovail.github.io/Vencord-css-snippets/snippets/PopOutActivityBackground/PopOutActivityBackground.css)` |
 
 ---
