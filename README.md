@@ -9,9 +9,4 @@
 ---
 ## Snippets
  
- **snippets can be found [here]()**
-
-
-**PopOutActivityBackground** 
-- give activity in the userpopout a background based on the activity icon 
-- `@import url(https://iinovail.github.io/Vencord-css-snippets/snippets/PopOutActivityBackground/PopOutActivityBackground.css)`
+ **snippets can be found [here](https://iinovail.github.io/Vencord-css-snippets/)**
