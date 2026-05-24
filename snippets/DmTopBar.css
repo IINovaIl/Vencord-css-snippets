@@ -1,0 +1,128 @@
+:root {
+    --icon-size: 40;
+    --gap: 12px;
+
+    --icon-size-px: calc(var(--icon-size) * 1px);
+    --scale-factor: calc(var(--icon-size) / 48 * 100%);
+}
+
+.container_c48ade {
+    flex-direction: column;
+}
+
+.guilds_c48ade {
+    width: 100%;
+    overflow: visible;
+    z-index: 1000;
+    height: 0;
+}
+
+.guilds_c48ade:has(.scroller_ef3116 > div:not([class], [aria-label], [aria-hidden])) {
+    height: calc(var(--icon-size-px) + var(--gap));
+}
+
+.tree_ef3116 {
+    width: 100%;
+    background: var(--background-tertiary);
+    transition: height 0.2s ease;
+    z-index: 1;
+    margin-left: 72px;
+    overflow: visible;
+}
+
+.scroller_ef3116 {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 100%;
+    padding-top: 0 !important;
+    overflow: hidden !important;
+}
+
+.scroller_ef3116 > div:not([class], [aria-label]) {
+    width: var(--icon-size-px);
+    height: 100% !important;
+    transition: opacity 0.2s ease;
+    margin-left: var(--gap);
+
+    .listItem__650eb {
+        margin: 0;
+        height: 100%;
+        width: 100%;
+
+        .wrapper__58105 {
+            display: none;
+        }
+
+        .listItemWrapper__91816 {
+            transform: scale(var(--scale-factor)) !important;
+            transform-origin: 50% 0;
+        }
+    }
+}
+
+.scroller_ef3116 > div:nth-child(2) {
+    margin-left: 0;
+}
+
+.scroller_ef3116,
+.tutorialContainer__1f388 {
+    & > .listItem__650eb {
+        margin: 0;
+    }
+}
+
+.guildSeparator__252b6 {
+    display: none;
+}
+
+div[aria-label="Servers"] {
+    overflow: auto;
+    scrollbar-width: none;
+    height: calc(100% - 206px);
+    position: fixed;
+    top: calc(12px + 48px + 22px);
+    left: 0;
+}
+
+.tutorialContainer__1f388 {
+    position: fixed;
+    z-index: 1000;
+    top: 22px;
+    left: 0;
+    background: var(--background-tertiary);
+}
+
+.itemsContainer_ef3116 {
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.itemsContainer_ef3116::-webkit-scrollbar {
+    display: none;
+}
+
+.footer__214dc {
+    position: fixed;
+    bottom: 56px;
+    left: 0;
+}
+
+.tutorialContainer__650eb {
+    background: var(--background-tertiary);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.base_c48ade {
+    margin-left: 72px;
+}
+
+.tutorialContainer__650eb + .listItem__650eb {
+    display: none;
+}
+
+.gradient__214dc.gradientHidden__214dc {
+    opacity: 1;
+}
