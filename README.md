@@ -1,6 +1,9 @@
-# Vencord CSS Snippets
+# Vencord CSS Snippet Archive
 
-A collection of CSS snippets i use in [Vencord](https://vencord.dev/), put on here to keep my 
+[!NOTE]
+A collection of CSS snippets i use in [Vencord](https://vencord.dev/),
+[!IMPORTANT]
+these snippets are not mine. i merely put them on here to keep my 
 css editor clean.
 
 ---
@@ -8,7 +11,7 @@ css editor clean.
 
 | Snippet | Description | Import |
 |---|---|---|
-| **NitroCardBanner** | Extends the banner image behind the Nitro card with a blurred, gradient-masked overlay effect. | `@import url(https://YOUR_USERNAME.github.io/vencord-css-snippets/snippets/NitroCardBanner/NitroCardBanner.css);` |
+| **PopOutActivityBackground** | give activity in the userpopout a background based on the activity icon | `@import url(https://iinovail.github.io/Vencord-css-snippets/snippets/PopOutActivityBackground/PopOutActivityBackground.css)` |
 
 ---
 ~~##Adding a new snippet~~
