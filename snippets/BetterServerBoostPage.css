@@ -1,0 +1,4 @@
+[class^=powerupContainer] {
+    display: flex;
+    > :not([class^=parentContainer]) { display: none; }
+}

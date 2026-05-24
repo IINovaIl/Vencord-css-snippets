@@ -1,10 +1,3 @@
-/* ============================================================
-   PopOutActivityBackground
-   Extends the banner image behind the Nitro card with a
-   blurred, gradient-masked overlay effect.
-   @import url(https://iinovail.github.io/vencord-css-snippets/snippets/PopOutActivityBackground/PopOutActivityBackground.css);
-   ============================================================ */
-
 .card__39ec2 {
     overflow: hidden;
 
