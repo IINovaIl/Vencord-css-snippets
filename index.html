@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vencord CSS Snippets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Syne:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #0d0e11;
+      --surface:    #13141a;
+      --surface2:   #0a0b0e;
+      --border:     #1e1f26;
+      --text:       #e2e2e8;
+      --muted:      #6b6b80;
+      --accent:     #6e7aff;
+      --green:      #4fc1a6;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      min-height: 100vh;
+      padding: 3rem 1rem;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 2.5rem;
+    }
+
+    header h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    header p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    .snippet-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .snippet-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .snippet-desc {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+
+    .import-block {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex;
+      align-items: stretch;
+      overflow: hidden;
+    }
+
+    .import-code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #b8b8cc;
+      padding: 13px 16px;
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.4;
+      user-select: all;
+    }
+
+    .import-code .kw  { color: var(--accent); }
+    .import-code .fn  { color: var(--accent); }
+    .import-code .url { color: var(--green); }
+
+    .copy-btn {
+      background: #1a1b23;
+      border: none;
+      border-left: 1px solid var(--border);
+      color: var(--muted);
+      cursor: pointer;
+      padding: 0 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background .15s, color .15s;
+      flex-shrink: 0;
+    }
+
+    .copy-btn:hover  { background: #22232e; color: var(--text); }
+    .copy-btn.copied { color: var(--green); }
+
+    .copy-btn svg {
+      width: 15px;
+      height: 15px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    footer {
+      margin-top: 2.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #3a3a50;
+      text-align: center;
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Vencord CSS Snippets</h1>
+      <p># paste an @import into Quick CSS — no clutter</p>
+    </header>
+
+    <hr />
+
+    <!-- ===================== SNIPPETS ===================== -->
+    <!-- To add a snippet: copy one .snippet-card block and update the
+         name, description, and the two occurrences of the import URL. -->
+
+    <div class="snippet-card">
+      <p class="snippet-name">NitroCardBanner</p>
+      <p class="snippet-desc">Extends the banner image behind the Nitro card with a blurred, gradient-masked overlay effect.</p>
+      <div class="import-block">
+        <span class="import-code">
+          <span class="kw">@import</span> <span class="fn">url</span>(<span class="url">https://YOUR_USERNAME.github.io/vencord-css-snippets/snippets/NitroCardBanner/NitroCardBanner.css</span>);
+        </span>
+        <button class="copy-btn"
+          data-import="@import url(https://YOUR_USERNAME.github.io/vencord-css-snippets/snippets/NitroCardBanner/NitroCardBanner.css);"
+          onclick="copyImport(this)" aria-label="Copy import">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          copy
+        </button>
+      </div>
+    </div>
+
+    <!-- ===================== /SNIPPETS ==================== -->
+
+    <hr />
+
+    <footer>
+      import everything at once →
+      <a href="./index.css">index.css</a>
+      &nbsp;·&nbsp;
+      <a href="https://github.com/YOUR_USERNAME/vencord-css-snippets" target="_blank" rel="noopener">
+        github.com/YOUR_USERNAME/vencord-css-snippets
+      </a>
+    </footer>
+  </div>
+
+  <script>
+    function copyImport(btn) {
+      const text = btn.getAttribute('data-import');
+      navigator.clipboard.writeText(text).then(() => {
+        btn.classList.add('copied');
+        btn.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true" style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg> copied`;
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true" style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> copy`;
+        }, 2200);
+      });
+    }
+  </script>
+</body>
+</html>
