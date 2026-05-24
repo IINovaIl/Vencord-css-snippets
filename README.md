@@ -4,7 +4,11 @@ A collection of CSS snippets i use in [Vencord](https://vencord.dev/), put on he
 css editor clean.
 
 ---
+## Snippets
 
+| Snippet | Description | Import |
+|---|---|---|
+| **NitroCardBanner** | Extends the banner image behind the Nitro card with a blurred, gradient-masked overlay effect. | `@import url(https://YOUR_USERNAME.github.io/vencord-css-snippets/snippets/NitroCardBanner/NitroCardBanner.css);` |
 
 ---
 ~~##Adding a new snippet~~
