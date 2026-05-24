@@ -156,41 +156,71 @@
 
     <hr />
 
-    <!-- ===================== SNIPPETS ===================== -->
-    <!-- To add a snippet: copy one .snippet-card block and update the
-         name, description, and the two occurrences of the import URL. -->
+    <div id="snippets-list"></div>
 
-    <div class="snippet-card">
-      <p class="snippet-name">PopOutActivityBackground</p>
-      <p class="snippet-desc">Gives activity in the userpopout a background based on the activity icon</p>
-      <div class="import-block">
-        <span class="import-code">
-          <span class="kw">@import</span> <span class="fn">url</span>(<span class="url">https://iinovail.github.io/Vencord-css-snippets/snippets/PopOutActivityBackground/PopOutActivityBackground.css</span>);
-        </span>
-        <button class="copy-btn"
-          data-import="@import url(https://iinovail.github.io/Vencord-css-snippets/snippets/PopOutActivityBackground/PopOutActivityBackground.css);"
-          onclick="copyImport(this)" aria-label="Copy import">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          copy
-        </button>
-      </div>
-    </div>
-
-    <!-- ===================== /SNIPPETS ==================== -->
 
 
   <script>
+    // ============================================================
+    //  ADD YOUR SNIPPETS HERE
+    //  Each entry needs:
+    //    name  — display name shown on the card
+    //    desc  — one-line description of what it does
+    //    file  — path under snippets/, e.g. "NitroCardBanner/NitroCardBanner.css"
+    // ============================================================
+    const BASE = 'https://iinovail.github.io/Vencord-css-snippets/snippets/';
+
+    const SNIPPETS = [
+      { 
+        name: 'PopOutActivityBackground',
+        desc: 'Gives activity in the user popout a background based on the activity icon.',
+        file: 'PopOutActivityBackground/PopOutActivityBackground.css',
+      },
+      // ── add new snippets below this line ──────────────────────
+      // {
+      //   name: 'MyNewSnippet',
+      //   desc: 'Short description of what this snippet does.',
+      //   file: 'MyNewSnippet/MyNewSnippet.css',
+      // },
+    ];
+    // ============================================================
+
+    const ICON_COPY = `<svg viewBox="0 0 24 24" aria-hidden="true" style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+    const ICON_CHECK = `<svg viewBox="0 0 24 24" aria-hidden="true" style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>`;
+
+    function renderSnippets() {
+      const list = document.getElementById('snippets-list');
+      list.innerHTML = SNIPPETS.map(s => {
+        const url  = BASE + s.file;
+        const stmt = `@import url(${url});`;
+        return `
+        <div class="snippet-card">
+          <p class="snippet-name">${s.name}</p>
+          <p class="snippet-desc">${s.desc}</p>
+          <div class="import-block">
+            <span class="import-code">
+              <span class="kw">@import</span> <span class="fn">url</span>(<span class="url">${url}</span>);
+            </span>
+            <button class="copy-btn" data-import="${stmt}" onclick="copyImport(this)" aria-label="Copy import">
+              ${ICON_COPY} copy
+            </button>
+          </div>
+        </div>`;
+      }).join('');
+    }
+
     function copyImport(btn) {
-      const text = btn.getAttribute('data-import');
-      navigator.clipboard.writeText(text).then(() => {
+      navigator.clipboard.writeText(btn.getAttribute('data-import')).then(() => {
         btn.classList.add('copied');
-        btn.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true" style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg> copied`;
+        btn.innerHTML = ICON_CHECK + ' copied';
         setTimeout(() => {
           btn.classList.remove('copied');
-          btn.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true" style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> copy`;
+          btn.innerHTML = ICON_COPY + ' copy';
         }, 2200);
       });
     }
+
+    renderSnippets();
   </script>
 </body>
 </html>
