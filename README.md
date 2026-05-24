@@ -1,10 +1,13 @@
 # Vencord CSS Snippets
 
-A collection of CSS snippets for [Vencord](https://vencord.dev/), hosted via GitHub Pages so your Quick CSS editor stays clean.
+A collection of CSS snippets i use in [Vencord](https://vencord.dev/), put on here to keep my 
+css editor clean.
 
 ---
 
-## Adding a new snippet
+
+---
+~ ## Adding a new snippet ~
 
 1. Create a folder under `snippets/` named after your snippet (PascalCase recommended).
 2. Add a `.css` file inside it with the same name.
