@@ -1,0 +1,22 @@
+.vc-permviewer-role-button { padding: 2px }
+
+[class^=roleTag] > [class^=role] {
+    border-radius: var(--radius-sm);
+    gap: 4px;
+    padding: 0 4px;
+    > [class^=roleCircle] { margin: unset; }
+    > span > [class^=roleIcon] {
+        height: 16px;
+        width: 16px;
+        margin-inline-start: unset;
+        vertical-align: top;
+        content: var(--role-icon-url-128);
+    }
+    > [class^=removeButton] {
+        position: absolute;
+        height: 12px;
+        width: 12px;
+        opacity: 0;
+        &:hover { opacity: 1; }
+    }
+}

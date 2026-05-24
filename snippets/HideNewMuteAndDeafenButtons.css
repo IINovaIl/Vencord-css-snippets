@@ -1,0 +1,9 @@
+/* Hide the buttons next to mute and deafen */
+div[class*=-micButtonParent] {
+  button[role="switch"] {
+    border-radius: var(--radius-sm) !important;
+    ~ button {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@import url(https://nspc911.github.io/themes/vencord/ChatBubblesKinda.theme.css);
+
+:root {
+  /* border for the messages          *\
+  \* set to none if you dont want any */
+  --cbk-border: none;
+  /* background for the messages             *\
+  \* set to transparent if you dont want any */
+  --cbk-background: #ffffff11;
+  /* border radius for the messages  *\
+  \* set to 0px if you dont want any */
+  --cbk-border-radius: 10px;
+}
