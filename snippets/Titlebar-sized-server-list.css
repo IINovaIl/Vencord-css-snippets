@@ -15,7 +15,7 @@
 
 .tutorialContainer__1f388 {
         position: fixed;
-        top: -2px;
+        top: 2px;
         left: 0px;
         -webkit-app-region: nodrag;
         scale: 0.9;
@@ -37,6 +37,9 @@
         background: var(--background-mod-normal) !important;
 }
 
+.overlay__58105 {
+        display: none;
+}
 
 .tutorialContainer__650eb {
         position: fixed;
